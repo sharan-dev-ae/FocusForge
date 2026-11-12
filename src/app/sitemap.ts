@@ -1,0 +1,2 @@
+import type { MetadataRoute } from "next";
+export default function sitemap(): MetadataRoute.Sitemap { const base = "https://focusforge.app"; return ["", "/games", "/games/number-recall", "/progress", "/leaderboard"].map((path) => ({ url: `${base}${path}`, lastModified: new Date(), changeFrequency: path === "" ? "weekly" : "monthly", priority: path === "" ? 1 : path.includes("number-recall") ? .9 : .7 })); }
